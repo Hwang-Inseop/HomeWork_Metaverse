@@ -27,7 +27,7 @@ public class FollowCamera : MonoBehaviour
 
         Vector3 targetPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
 
-        //카메라 이동 제한
+        //카메라 이동 범위 제한
         targetPosition.x = Mathf.Clamp(targetPosition.x, minBounds.x, maxBounds.x);
         targetPosition.y = Mathf.Clamp(targetPosition.y, minBounds.y, maxBounds.y);
 

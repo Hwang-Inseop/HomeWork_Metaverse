@@ -24,11 +24,11 @@ public class PlayerController : MonoBehaviour
         // 왼쪽 이동 시 스프라이트 반전
         if (movement.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1); // 좌우 반전
+            transform.localScale = new Vector3(-1, 1, 1); // 왼 쪽으로 가면 좌우 반전
         }
         else if (movement.x > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1); // 원래 크기
+            transform.localScale = new Vector3(1, 1, 1); // 오른쪽으로 가면 원래대로 출력
         }
 
         // 애니메이션 파라미터 설정
