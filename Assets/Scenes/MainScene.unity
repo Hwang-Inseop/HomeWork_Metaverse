@@ -1510,10 +1510,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1186898388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b81dfc57be6ad12459065a71b2039315, type: 3}
+  m_Script: {fileID: 11500000, guid: 024d12bf671101a4b87c1ea7f233d3d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1815914607}
+  target: {fileID: 0}
   minBounds: {x: -6.7, y: -3.7}
   maxBounds: {x: 6.7, y: 3.7}
 --- !u!1 &1241958539
