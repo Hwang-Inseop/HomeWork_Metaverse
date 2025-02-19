@@ -63,5 +63,20 @@ public class Player_Flying : MonoBehaviour
         }
 
         _rigidbody.velocity = velocity; // 계산된 값을 리지드바디에 적용
+        
+        float angle = Mathf.Clamp((_rigidbody.velocity.y * 10f), -90, 90); // 회전 각도 제한
+        float lerpAngle = Mathf.Lerp(_rigidbody.velocity.y, angle, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Euler(0, 0, lerpAngle);
+    }
+    
+    public void OnCollisionEnter2D(Collision2D collision) // 물리적 충돌이 발생하면 실행되는 유니티 함수
+    {
+        if (godMode)
+            return;
+            
+        if (isDead)
+            return;
+
+        animator.SetInteger("IsDie", 1);
     }
 }
