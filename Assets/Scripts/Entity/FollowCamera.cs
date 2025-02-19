@@ -33,6 +33,6 @@ public class FollowCamera : MonoBehaviour
         cameraPosition.y = Mathf.Clamp(cameraPosition.y, minBounds.y, maxBounds.y);
 
         transform.position = cameraPosition;
-    }
+    } 
 
 }
