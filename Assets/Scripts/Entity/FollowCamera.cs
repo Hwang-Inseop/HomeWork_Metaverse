@@ -5,15 +5,15 @@ using UnityEngine;
 public class FollowCamera : MonoBehaviour
 {
     public Transform target;
-    public Vector2 minBounds; // Ä«¸Ş¶ó°¡ ÀÌµ¿ÇÒ ÃÖ¼Ò ÁÂÇ¥
-    public Vector2 maxBounds; // Ä«¸Ş¶ó°¡ ÀÌµ¿ÇÒ ÃÖ´ë ÁÂÇ¥
+    public Vector2 minBounds; // ì¹´ë©”ë¼ ì¢Œí‘œ ìµœì†Œê°’
+    public Vector2 maxBounds; // ì¹´ë©”ë¼ ì¢Œí‘œ ìµœëŒ€ê°’
 
     void Update()
     {
         if (target == null)
             return;
 
-        // Ä«¸Ş¶ó ÁÂÇ¥¸¦ Å¸°Ù ÁÂÇ¥¿Í µ¿ÀÏÇÏ°Ô ÇØ¼­ Ä«¸Ş¶ó°¡ ÇÃ·¹ÀÌ¾î¸¦ ÃßÀû
+        // ì¹´ë©”ë¼ ìœ„ì¹˜ë¥¼ í”Œë ˆì´ì–´ ìœ„ì¹˜ì™€ ê°™ê²Œ í•¨
         Vector3 pos = transform.position;
         pos.x = target.position.x;
         pos.y = target.position.y;
@@ -25,14 +25,14 @@ public class FollowCamera : MonoBehaviour
         if (target == null)
             return;
 
-        //Ä«¸Ş¶ó À§Ä¡¸¦ Å¸°Ù=ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡·Î Á¤ÀÇÇÏµÇ, z°ªÀº ¿ø·¡ Ä«¸Ş¶óÀÇ À§Ä¡·Î Á¤ÀÇ
+        // ì¹´ë©”ë¼ ìœ„ì¹˜ë¥¼ í”Œë ˆì´ì–´ ìœ„ì¹˜ì™€ ê°™ê²Œ ì •ì˜í•˜ë˜, zê°’ì€ ì¹´ë©”ë¼ ì›ë˜ ìœ„ì¹˜ ê·¸ëŒ€ë¡œ ì •ì˜
         Vector3 cameraPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
 
-        //Ä«¸Ş¶ó ÀÌµ¿ ¹üÀ§ Á¦ÇÑ
+        // ì¹´ë©”ë¼ê°€ ì´ë™í•  ìˆ˜ ìˆëŠ” ë²”ìœ„ì˜ ìµœì†Œê°’ê³¼ ìµœëŒ€ê°’ì„ ë°˜í™˜
         cameraPosition.x = Mathf.Clamp(cameraPosition.x, minBounds.x, maxBounds.x);
         cameraPosition.y = Mathf.Clamp(cameraPosition.y, minBounds.y, maxBounds.y);
 
         transform.position = cameraPosition;
-    } 
+    }
 
-}
+}// git ?ì’“? äºŒì‡±ê½ æºâ‘¥ì­š ?ë‹¿ê» ?ëº¤ì”¤??äºŒì‡±ê½

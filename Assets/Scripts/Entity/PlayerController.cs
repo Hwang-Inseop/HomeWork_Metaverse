@@ -7,39 +7,39 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 movement;
-    public float moveSpeed = 5f; // ÀÌµ¿ ¼Óµµ
+    public float moveSpeed = 5f; // ì´ë™ ì†ë„
     void Start()
     {
-        // ÇÊµå¿¡¼­ ¼±¾ğÇÑ ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        // í•„ìš”í•œ ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        // ¹æÇâÅ°·Î ÀÌµ¿
+        // ì…ë ¥ì— ë”°ë¼ ë²¡í„°ê°’ì´ ë³€í•¨
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        // ¿ŞÂÊ ÀÌµ¿ ½Ã ½ºÇÁ¶óÀÌÆ® ¹İÀü
+        // localScaleê°’ì„ ë³€ê²½í•´ì„œ ì´ë™ ë°©í–¥ì— ë”°ë¼ ìŠ¤í”„ë¼ì´íŠ¸ ë°©í–¥ ì „í™˜
         if (movement.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1); // ¿Ş ÂÊÀ¸·Î °¡¸é ÁÂ¿ì ¹İÀü
+            transform.localScale = new Vector3(-1, 1, 1); // ì™¼ìª½ìœ¼ë¡œ ì´ë™í•˜ë©´ ìŠ¤í”„ë¼ì´íŠ¸ë¥¼ ì™¼ìª½ìœ¼ë¡œ
         }
         else if (movement.x > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1); // ¿À¸¥ÂÊÀ¸·Î °¡¸é ¿ø·¡´ë·Î Ãâ·Â
+            transform.localScale = new Vector3(1, 1, 1); // ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì´ë™í•˜ë©´ ìŠ¤í”„ë¼ì´íŠ¸ë¥¼ ì˜¤ë¥¸ìª½ìœ¼ë¡œ
         }
 
-        // ¾Ö´Ï¸ŞÀÌ¼Ç ÆÄ¶ó¹ÌÅÍ ¼³Á¤
-        animator.SetFloat("MoveX", movement.x); // XÃà ÀÌµ¿ °ª Àü´Ş
-        animator.SetFloat("MoveY", movement.y); // YÃà ÀÌµ¿ °ª Àü´Ş
-        animator.SetBool("isMoving", movement != Vector2.zero); // ÀÌµ¿Áß »óÅÂÀÎÁö Ã¼Å©
+        // Move ì• ë‹ˆë©”ì´ì…˜ ì¬ìƒì„ ìœ„í•œ íŒŒë¼ë¯¸í„° ì„¤ì •
+        animator.SetFloat("MoveX", movement.x); // Xê°’ ì…ë ¥ í™•ì¸
+        animator.SetFloat("MoveY", movement.y); // Yê°’ ì…ë ¥ í™•ì¸
+        animator.SetBool("isMoving", movement != Vector2.zero); // movementê°€ 0ì´ ì•„ë‹ˆë©´ ì›€ì§ì´ëŠ” ìƒíƒœ
     }
 
     void FixedUpdate()
     {
-        // Rigidbody2D¸¦ »ç¿ëÇÏ¿© ÀÌµ¿ Àû¿ë
+        // rigidbody2Dì˜ ê°€ì†ë„ì— ë²¡í„°*ì´ë™ì†ë„ë¡œ ì´ë™ êµ¬í˜„
         rb.velocity = movement * moveSpeed;
     }
 }
