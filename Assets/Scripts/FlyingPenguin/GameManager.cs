@@ -38,14 +38,14 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over");
-        uiManager.SetRestart();  // UIManager를 통해 재시작 UI 활성화
+        uiManager.SetReturn();  // UIManager를 통해 재시작 UI 활성화
     }
 
-    // 게임 재시작 메서드
-    public void RestartGame()
+    // 메인 씬으로 돌아가는 메서드
+    public void ReturnToMainScene()
     {
-        // 현재 활성화된 씬의 이름을 가져와 다시 로드
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // 메인 씬 로드
+        SceneManager.LoadScene("MainScene");
     }
 
     // 점수 획득 메서드
