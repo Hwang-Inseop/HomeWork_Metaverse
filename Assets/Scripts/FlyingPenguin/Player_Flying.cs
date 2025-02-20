@@ -59,7 +59,7 @@ public class Player_Flying : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {
                     // 게임 재시작 함수 호출
-                    gameManager.RestartGame();
+                    gameManager.ReturnToMainScene();
                 }
             }
             else
