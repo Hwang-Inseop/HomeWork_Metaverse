@@ -3272,7 +3272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1582930383}
-  restartText: {fileID: 0}
+  returnText: {fileID: 2139215378}
 --- !u!1 &1121154894
 GameObject:
   m_ObjectHideFlags: 0
